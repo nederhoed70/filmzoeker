@@ -1,6 +1,4 @@
-module.exports = {
-    "Movies": [
-      {
+     const dataRaw =  [{
         "Title": "X-Men: Days of Future Past",
         "Year": "2014",
         "imdbID": "tt1877832",
@@ -244,7 +242,9 @@ module.exports = {
         "imdbID": "tt0112230",
         "Type": "series",
         "Poster": "https://m.media-amazon.com/images/M/MV5BOTdkYjA4YzAtMjNiZS00OTgyLTg5Y2ItNGIwZGQyMTUzNzFiXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg"
-      }
-    ]
-  }
+      }]
+    //  module.exports = {
+    //  dataRaw : dataRaw
+    //  }
+   // export default dataRaw;
   
