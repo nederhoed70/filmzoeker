@@ -4,46 +4,84 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js">
-  <!--<![endif]-->
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Movie List</title>
-    <meta name="description" content="Movie List" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
-  </head>
-  <body>
-    <header>
-      <nav>
-        <div class= "logo"><h1>FILM ZOEKER</h1></div>
-        <div class="flex-box">
-        <div id="button-container">
-        <input type="radio" name="filter" value="nieuw" class="filter-button">
-        <label for="Avengers">nieuwe films</label>
-         <input type="radio" name="filter" value="Avengers" class="filter-button">
-         <label for="Avengers">Avengers</label>
-         <input type="radio" name="filter" value="X-Men" class="filter-button">
-         <label for="X-Men">X-Men</label>
-         <input type="radio" name="filter" value="Princess" class="filter-button">
-         <label for="Princess">Princess</label>
-         <input type="radio" name="filter" value="Batman" class="filter-button">
-         <label for="Batman">Batman</label>
-         <input type="radio" name="filter" value="geen" class="filter-button">
-         <label for="geen">geen filter</label>
-         </div>
-         <div id = "search-container">
-         <input type="search" name="search" value = "" class="search-bar">
-         </div>
-         <div id = "current-filter" class = "current-filter"><h2 id="filter-title">gebruik een filter of zoek</h2></div>
-         </div>
-      </nav>
-    </header>
-<main id="main-grid" class="main">
-  <ul class="movie-list" id="movie-list">
-
-  </ul>
-</main>
-    <script src="js/javascript.js"></script>
-  </body>
+	<!--<![endif]-->
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Movie List</title>
+		<meta name="description" content="Movie List" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+	</head>
+	<body>
+		<header>
+			<nav>
+				<div class="logo"><h1>FILM ZOEKER</h1></div>
+				<div class="flex-box">
+					<div id="button-container">
+						<input
+							type="radio"
+							name="filter"
+							value="nieuw"
+							class="filter-button"
+						/>
+						<label for="Avengers">nieuwe films</label>
+						<input
+							type="radio"
+							name="filter"
+							value="Avengers"
+							class="filter-button"
+						/>
+						<label for="Avengers">Avengers</label>
+						<input
+							type="radio"
+							name="filter"
+							value="X-Men"
+							class="filter-button"
+						/>
+						<label for="X-Men">X-Men</label>
+						<input
+							type="radio"
+							name="filter"
+							value="Princess"
+							class="filter-button"
+						/>
+						<label for="Princess">Princess</label>
+						<input
+							type="radio"
+							name="filter"
+							value="Batman"
+							class="filter-button"
+						/>
+						<label for="Batman">Batman</label>
+						<input
+							type="radio"
+							name="filter"
+							value="geen"
+							class="filter-button"
+						/>
+						<label for="geen">geen filter</label>
+					</div>
+					<div id="search-container">
+						<form>
+							<input
+								type="search"
+								name="search"
+								value=""
+								class="search-bar"
+								id="search-bar"
+							/><label for="search">zoeken</label>
+						</form>
+					</div>
+					<div id="current-filter" class="current-filter">
+						<h2 id="filter-title">gebruik een filter of zoek</h2>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<main id="main-grid" class="main">
+			<ul class="movie-list" id="movie-list"></ul>
+		</main>
+		<script src="js/javascript.js"></script>
+	</body>
 </html>
