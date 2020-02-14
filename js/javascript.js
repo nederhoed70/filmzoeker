@@ -251,23 +251,28 @@ console.log(dataRaw[1].Title);
 //buttons in array
 const buttons = Array.from(document.getElementsByClassName('filter-button'));
 console.log(buttons);
-let listenToButtons = () => {
-    buttons.forEach((button) => button.addEventListener('click', (event => showItems(dataRaw, event.target.value))));
-}
+const listenToButtons = () => {
+buttons.forEach((button) => button.addEventListener('click', (event => showItems(dataRaw, event.target.value))));
+};
+
+//searchbar listener // mmmm....beer
+const searchBar = document.getElementsByClassName('search-bar');
+console.log(searchBar);
+const listenToSearch = () => {
+//searchBar.addEventListener('change', (event => () {searchBar.value = ''});)
+};
 
 const showItems = (data, filter) => {
-console.log(filter);
+//console.log(filter);
 
 //show movies in the DOM
 const parseMovies = (movies, filter) => {
     //clear current list
     const mainUl = document.getElementById("movie-list");
+    const currentFilter = document.getElementById("filter-title");
+     currentFilter.innerHTML = filter + ' filter';
      mainUl.innerHTML = '';
-    
-    //console.log(filter + ' movies: ' + movies[1].Poster);
     movies.forEach((movie) => {
-     // mainUl.appendChild(newLi);
-
      const newLi = document.createElement('li');
      const newA = document.createElement('a');
      const newImage = document.createElement("img");
@@ -283,40 +288,36 @@ const parseMovies = (movies, filter) => {
     });
 }
 
+
 //filter data
 const filteredMovies = (data, filter) => {
-    let parseData = data;
+    const filteredMovies = Array.from(data.filter((item) => item.Title.indexOf(filter) !== -1));
+    const newMovies = Array.from(data.filter((item) => parseInt(item.Year) > 2014));
     switch (filter) {
-    case 'nieuw': 
-    parseData = Array.from(data.filter((item) => parseInt(item.Year) > 2014));
-    console.log('nieuw1');
+    case 'nieuw':
+    parseMovies(newMovies, filter);
+    //console.log('nieuw1');
     break;
-    case 'geen': 
-    parseData = data;
-    console.log(parseData);
+    case 'geen':
+    parseMovies(data, filter);
     break;
     default:
-     //   console.log(data.filter((item) => item.Title.indexOf(filter) !== -1));
-    parseData = Array.from(data.filter((item) => item.Title.indexOf(filter) !== -1));
-    }
-    //console.log(parseData);
-    parseMovies(parseData, filter);
-    
-    
+    parseMovies(filteredMovies, filter);
+    }  
 }
     
 filteredMovies(data, filter);
 
-
 }
 const setEventListeners =() => {
     listenToButtons();
+    listenToSearch();
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-console.log('ready');
-setEventListeners();
-});
 
+setEventListeners();
+
+});
 
 //

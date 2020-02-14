@@ -16,6 +16,9 @@
   <body>
     <header>
       <nav>
+        <div class= "logo"><h1>FILM ZOEKER</h1></div>
+        <div class="flex-box">
+        <div id="button-container">
         <input type="radio" name="filter" value="nieuw" class="filter-button">
         <label for="Avengers">nieuwe films</label>
          <input type="radio" name="filter" value="Avengers" class="filter-button">
@@ -28,14 +31,14 @@
          <label for="Batman">Batman</label>
          <input type="radio" name="filter" value="geen" class="filter-button">
          <label for="geen">geen filter</label>
+         </div>
+         <div id = "search-container">
+         <input type="search" name="search" value = "" class="search-bar">
+         </div>
+         <div id = "current-filter" class = "current-filter"><h2 id="filter-title">gebruik een filter of zoek</h2></div>
+         </div>
       </nav>
     </header>
-    <!--[if lt IE 7]>
-      <p class="browsehappy">
-        You are using an <strong>outdated</strong> browser. Please
-        <a href="#">upgrade your browser</a> to improve your experience.
-      </p>
-    <![endif]-->
 <main id="main-grid" class="main">
   <ul class="movie-list" id="movie-list">
 
