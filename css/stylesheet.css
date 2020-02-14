@@ -1,0 +1,14 @@
+body {
+    background-color: #000;
+    color: #fff;
+}
+.movie-poster {
+    
+    width: 250px;
+}
+.movie-list {
+    display: inline;
+}
+.movie-list-item {
+    display: inline;
+}
