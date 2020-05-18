@@ -282,7 +282,16 @@ const dataRaw = [
 			'https://m.media-amazon.com/images/M/MV5BOTdkYjA4YzAtMjNiZS00OTgyLTg5Y2ItNGIwZGQyMTUzNzFiXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg',
 	},
 ];
-
+//menu pop-out
+const menu = document.getElementById('menu-pop');
+const listenToMenu = () => {
+	menu.addEventListener('click', (event) => {
+		let menuDisplay = document.getElementById('menu');
+		menuDisplay.className != 'visible'
+			? (menuDisplay.className = 'visible')
+			: (menuDisplay.className = 'hidden');
+	});
+};
 //buttons in array
 const buttons = Array.from(document.getElementsByClassName('filter-button'));
 const listenToButtons = () => {
@@ -295,7 +304,6 @@ const listenToButtons = () => {
 
 //searchbar listener
 const searchBar = document.getElementById('search-bar');
-console.log(searchBar);
 const listenToSearch = () => {
 	searchBar.addEventListener('input', (event) =>
 		showItems(dataRaw, event.target.value)
@@ -310,7 +318,7 @@ const showItems = (data, filter) => {
 		const mainUl = document.getElementById('movie-list');
 		//Which filter selected?
 		const currentFilter = document.getElementById('filter-title');
-		currentFilter.innerHTML = filter + ' filter';
+		currentFilter.innerHTML = filter + ' filter geselecteerd';
 		mainUl.innerHTML = '';
 		movies.forEach((movie) => {
 			const newLi = document.createElement('li');
@@ -354,6 +362,7 @@ const showItems = (data, filter) => {
 const setEventListeners = () => {
 	listenToButtons();
 	listenToSearch();
+	listenToMenu();
 };
 
 //respect the DOM
