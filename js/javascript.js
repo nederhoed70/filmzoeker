@@ -312,6 +312,10 @@ const listenToSearch = () => {
 
 //show filtered items
 const showItems = (data, filter) => {
+	//close menu
+	setTimeout(() => {
+		document.getElementById('menu').className = 'hidden';
+	}, 400);
 	//show movies in the DOM
 	const parseMovies = (movies, filter) => {
 		//clear current list
